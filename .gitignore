@@ -1,0 +1,8 @@
+*.iml
+.idea
+**/target
+**/advanced/bot
+**/expert/bot
+logs
+**/*.log
+output/move.txt
