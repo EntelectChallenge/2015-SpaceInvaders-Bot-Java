@@ -32,4 +32,4 @@ Download the [zip file](https://github.com/EntelectChallenge/2015-SpaceInvaders-
 The easiest way to compile is to open a Command Prompt, change to your bot folder and run `compile.bat`. This will use Maven to fetch your dependencies and build your bot.
 
 ## Run
-Once you have compiled you can do a basic test of the bot by simply launching a Command Prompt, changing to the bot directory and running `run.bat`. This will use the example state and map files in the output folder.
+Once you have compiled you can do a basic test of the bot by simply launching a Command Prompt, changing to the bot directory and running `run.bat output`. This will use the example state and map files in the output folder.
