@@ -1,7 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
+
 import javax.annotation.Generated;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,16 +23,22 @@ import java.util.Map;
 public class AlienManager {
 
     @JsonProperty("PlayerNumber")
+    @SerializedName("PlayerNumber")
     private Integer playerNumber;
     @JsonProperty("Disabled")
+    @SerializedName("Disabled")
     private Boolean disabled;
     @JsonProperty("Waves")
+    @SerializedName("Waves")
     private List<List<Wave>> waves = new ArrayList<List<Wave>>();
     @JsonProperty("ShotEnergyCost")
+    @SerializedName("ShotEnergyCost")
     private Integer shotEnergyCost;
     @JsonProperty("ShotEnergy")
+    @SerializedName("ShotEnergy")
     private Integer shotEnergy;
     @JsonProperty("DeltaX")
+    @SerializedName("DeltaX")
     private Integer deltaX;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();

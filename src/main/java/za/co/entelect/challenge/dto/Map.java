@@ -1,8 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Generated;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,10 +19,13 @@ import java.util.List;
 public class Map {
 
     @JsonProperty("Width")
+    @SerializedName("Width")
     private Integer width;
     @JsonProperty("Height")
+    @SerializedName("Height")
     private Integer height;
     @JsonProperty("Rows")
+    @SerializedName("Rows")
     private List<List<Row>> rows = new ArrayList<List<Row>>();
     @JsonIgnore
     private java.util.Map<String, Object> additionalProperties = new HashMap<String, Object>();
