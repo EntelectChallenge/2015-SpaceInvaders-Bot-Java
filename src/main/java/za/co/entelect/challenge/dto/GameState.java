@@ -1,7 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
+
 import javax.annotation.Generated;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,14 +21,19 @@ import java.util.List;
 public class GameState {
 
     @JsonProperty("BuildingsAvailable")
+    @SerializedName("BuildingsAvailable")
     private List<BuildingsAvailable> buildingsAvailable = new ArrayList<BuildingsAvailable>();
     @JsonProperty("Map")
+    @SerializedName("Map")
     private Map map;
     @JsonProperty("Players")
+    @SerializedName("Players")
     private List<Player> players = new ArrayList<Player>();
     @JsonProperty("RoundNumber")
+    @SerializedName("RoundNumber")
     private Integer roundNumber;
     @JsonProperty("RoundLimit")
+    @SerializedName("RoundLimit")
     private Integer roundLimit;
     @JsonIgnore
     private java.util.Map<String, Object> additionalProperties = new HashMap<String, Object>();

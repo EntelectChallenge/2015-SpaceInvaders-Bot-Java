@@ -1,8 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Generated;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,30 +29,43 @@ import java.util.List;
 public class Player {
 
     @JsonProperty("PlayerNumberReal")
+    @SerializedName("PlayerNumberReal")
     private Integer playerNumberReal;
     @JsonProperty("PlayerNumber")
+    @SerializedName("PlayerNumber")
     private Integer playerNumber;
     @JsonProperty("PlayerName")
+    @SerializedName("PlayerName")
     private String playerName;
     @JsonProperty("Ship")
+    @SerializedName("Ship")
     private Object ship;
     @JsonProperty("Kills")
+    @SerializedName("Kills")
     private Integer kills;
     @JsonProperty("Lives")
+    @SerializedName("Lives")
     private Integer lives;
     @JsonProperty("RespawnTimer")
+    @SerializedName("RespawnTimer")
     private Integer respawnTimer;
     @JsonProperty("Missiles")
+    @SerializedName("Missiles")
     private List<Object> missiles = new ArrayList<Object>();
     @JsonProperty("MissileLimit")
+    @SerializedName("MissileLimit")
     private Integer missileLimit;
     @JsonProperty("AlienWaveSize")
+    @SerializedName("AlienWaveSize")
     private Integer alienWaveSize;
     @JsonProperty("AlienFactory")
+    @SerializedName("AlienFactory")
     private Object alienFactory;
     @JsonProperty("MissileController")
+    @SerializedName("MissileController")
     private Object missileController;
     @JsonProperty("AlienManager")
+    @SerializedName("AlienManager")
     private za.co.entelect.challenge.dto.AlienManager alienManager;
     @JsonIgnore
     private java.util.Map<String, Object> additionalProperties = new HashMap<String, Object>();

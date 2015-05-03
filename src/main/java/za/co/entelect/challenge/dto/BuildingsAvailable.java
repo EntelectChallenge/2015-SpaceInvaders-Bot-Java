@@ -1,8 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Generated;
+
 import java.util.HashMap;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -15,10 +17,13 @@ import java.util.HashMap;
 public class BuildingsAvailable {
 
     @JsonProperty("Command")
+    @SerializedName("Command")
     private String command;
     @JsonProperty("Type")
+    @SerializedName("Type")
     private String type;
     @JsonProperty("Cost")
+    @SerializedName("Cost")
     private Integer cost;
     @JsonIgnore
     private java.util.Map<String, Object> additionalProperties = new HashMap<String, Object>();

@@ -1,8 +1,10 @@
 package za.co.entelect.challenge.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.Generated;
+
 import java.util.HashMap;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,26 +25,37 @@ import java.util.HashMap;
 public class Wave {
 
     @JsonProperty("DeltaY")
+    @SerializedName("DeltaY")
     private Integer deltaY;
     @JsonProperty("DeltaX")
+    @SerializedName("DeltaX")
     private Integer deltaX;
     @JsonProperty("Command")
+    @SerializedName("Command")
     private Integer command;
     @JsonProperty("Id")
+    @SerializedName("Id")
     private Integer id;
     @JsonProperty("Alive")
+    @SerializedName("Alive")
     private Boolean alive;
-    @JsonProperty("x")
+    @JsonProperty("X")
+    @SerializedName("X")
     private Integer x;
-    @JsonProperty("y")
+    @JsonProperty("Y")
+    @SerializedName("Y")
     private Integer y;
     @JsonProperty("Width")
+    @SerializedName("Width")
     private Integer width;
     @JsonProperty("Height")
+    @SerializedName("Height")
     private Integer height;
     @JsonProperty("Type")
+    @SerializedName("Type")
     private String type;
     @JsonProperty("PlayerNumber")
+    @SerializedName("PlayerNumber")
     private Integer playerNumber;
     @JsonIgnore
     private java.util.Map<String, Object> additionalProperties = new HashMap<String, Object>();
