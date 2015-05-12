@@ -39,7 +39,7 @@ public class Player {
     private String playerName;
     @JsonProperty("Ship")
     @SerializedName("Ship")
-    private Object ship;
+    private Ship ship;
     @JsonProperty("Kills")
     @SerializedName("Kills")
     private Integer kills;
@@ -136,7 +136,7 @@ public class Player {
      * The Ship
      */
     @JsonProperty("Ship")
-    public Object getShip() {
+    public Ship getShip() {
         return ship;
     }
 
@@ -146,7 +146,7 @@ public class Player {
      * The Ship
      */
     @JsonProperty("Ship")
-    public void setShip(Object ship) {
+    public void setShip(Ship ship) {
         this.ship = ship;
     }
 
