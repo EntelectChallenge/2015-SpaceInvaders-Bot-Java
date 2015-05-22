@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.minidev.json.JSONArray;
 
@@ -14,6 +15,7 @@ import com.jayway.jsonpath.PathNotFoundException;
 import za.co.entelect.challenge.dto.GameState;
 import za.co.entelect.challenge.dto.Missile;
 import za.co.entelect.challenge.dto.Player;
+import za.co.entelect.challenge.dto.Ship;
 import za.co.entelect.challenge.dto.enums.EntityType;
 import za.co.entelect.challenge.utils.LogHelper;
 
@@ -55,7 +57,7 @@ public class BasicGameStateReader implements GameStateReader
         Player player = new Player();
 
         try {
-            LinkedHashMap<String, Object> playerMap = JsonPath.read(jsonFile, playerPath);
+            Map<String, Object> playerMap = JsonPath.read(jsonFile, playerPath);
 
             player.setPlayerName((String)playerMap.get("PlayerName"));
             player.setPlayerNumber((Integer)playerMap.get("PlayerNumber"));
@@ -67,6 +69,10 @@ public class BasicGameStateReader implements GameStateReader
             JSONArray missiles = (JSONArray)playerMap.get("Missiles");
 
             player.setMissiles(loadMissiles(missiles));
+            
+            Ship ship = loadShip ((Map)playerMap.get("Ship"));
+            
+            player.setShip(ship );
 
         } catch (PathNotFoundException pnfe) {
             LogHelper.log("Index out of bounds when evaluating path " + playerPath);
@@ -76,7 +82,24 @@ public class BasicGameStateReader implements GameStateReader
         return player;
     }
 
-    private List<Object> loadMissiles(JSONArray missiles) {
+    private Ship loadShip(Map<String,Object> in) {
+		Ship ship = new Ship();
+		
+		ship.setAlive((Boolean) in.get("Alive"));
+		ship.setCommand(in.get("Command").toString());
+		ship.setCommandFeedback(in.get("CommandFeedback").toString());
+		ship.setHeight((Integer) in.get("Height"));
+		ship.setId((Integer) in.get("Id"));
+		ship.setPlayerNumber((Integer) in.get ("PlayerNumber"));
+		ship.setType((String) in.get("Type"));
+		ship.setWidth((Integer) in.get ("Width"));
+		ship.setX((Integer) in.get("X"));
+		ship.setY((Integer) in.get("Y"));
+		
+		return ship;
+	}
+
+	private List<Object> loadMissiles(JSONArray missiles) {
         List<Object> playerMissiles = new ArrayList<>();
         Missile playerMissile;
 
